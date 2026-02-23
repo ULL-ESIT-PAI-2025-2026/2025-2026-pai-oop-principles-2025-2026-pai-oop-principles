@@ -16,50 +16,54 @@
  * Represents a base user with protected data.
  */
 class ProtectedUser {
-    /**
-     * User name.
-     * Accessible inside the class and its subclasses.
-     */
-    protected name: string;
+  /**
+   * User name.
+   * Accessible inside the class and its subclasses.
+   */
+  protected name: string;
   
-    /**
-     * Creates a new User instance.
-     * @param name The name of the user.
-     */
-    constructor(name: string) {
-      // Accessed from inside the class.
-      this.name = name;
-    }
+  /**
+   * Creates a new User instance.
+   * @param name The name of the user.
+   */
+  constructor(name: string) {
+    // Accessed from inside the class.
+    this.name = name;
+  }
+}
+  
+/**
+ * Represents an admin user.
+ */
+class Admin extends ProtectedUser {
+  /**
+   * Creates a new Admin instance (not a necessary constructor but makes 
+   * the example easier to understand).
+   * @param name The name of the admin.
+   */
+  constructor(name: string) {
+    super(name);
   }
   
   /**
-   * Represents an admin user.
+   * Public method that accesses a protected property
+   * from the parent class.
+   * @return A string identifying the admin.
    */
-  class Admin extends ProtectedUser {
-    /**
-     * Creates a new Admin instance (not a necessary constructor but makes 
-     * the example easier to understand).
-     * @param name The name of the admin.
-     */
-    constructor(name: string) {
-      super(name);
-    }
-  
-    /**
-     * Public method that accesses a protected property
-     * from the parent class.
-     * @return A string identifying the admin.
-     */
-    public getRole(): string {
-      return `Admin: ${this.name}`;
-    }
+  public getRole(): string {
+    return `Admin: ${this.name}`;
   }
+}
   
-  function main() {
-    // Protected members are accessible through subclass methods.
-    const admin = new Admin('Bob');
-    // console.log(admin.name); // Not allowed: protected access
-    console.log(admin.getRole()); // Allowed
-  }
+/**
+  * Entry point of the program.
+  * Demonstrates access to protected class members.
+  */
+function main() {
+  // Protected members are accessible through subclass methods.
+  const admin = new Admin('Bob');
+  // console.log(admin.name); // Not allowed: protected access
+  console.log(admin.getRole()); // Allowed
+}
   
-  main();
+main();

@@ -8,20 +8,19 @@
  * @author César Navarro Santos
  * @author Javier Acosta Portocarrero
  * @since Feb 22 2026
- * @desc Shows how the public access modifier works.
+ * @desc Shows how the private access modifier works.
  */
 
 /**
- * Represents a simple user with publicly accessible data.
+ * Represents a simple user with private data.
  */
-class PublicUser {
+class PrivateUser {
   /**
    * User name.
-   * Public by default (just for the example), accessible 
-   * both inside and outside the class.
+   * Accessible only inside the class.
    */
-  name: string;
-    
+  private name: string;
+
   /**
    * Creates a new User instance.
    * @param name The name of the user.
@@ -30,25 +29,26 @@ class PublicUser {
     // Accessed from inside the class.
     this.name = name;
   }
-  
+
   /**
-   * Public method that returns a greeting message.
+   * Public method that provides controlled access
+   * to the private property.
    * @return A greeting string.
    */
   public greet(): string {
     return `Hello, my name is ${this.name}`;
   }
 }
-  
+
 /**
   * Entry point of the program.
-  * Demonstrates access to public class members.
+  * Demonstrates access to private class members.
   */
 function main() {
-  // Public members can be accessed from outside the class.
-  const user = new PublicUser('Alice');
-  console.log(user.name); // Allowed
-  console.log(user.greet()); // Also allowed
+  // Public methods can be accessed from outside the class.
+  const user = new PrivateUser('Alice');
+  // console.log(user.name); // Not allowed: private access
+  console.log(user.greet()); // Allowed
 }
 
 main();
