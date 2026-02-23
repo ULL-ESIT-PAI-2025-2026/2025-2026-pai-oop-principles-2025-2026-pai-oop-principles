@@ -47,8 +47,8 @@ class User {
 function main() {
   // Public members can be accessed from outside the class.
   const user = new User('Alice');
-  console.log(user.name);     // Allowed
-  console.log(user.greet());  // Also allowed
+  console.log(user.name); // Allowed
+  console.log(user.greet()); // Also allowed
 }
 
 main();
