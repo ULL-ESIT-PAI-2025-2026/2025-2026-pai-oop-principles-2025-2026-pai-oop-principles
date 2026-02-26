@@ -35,6 +35,29 @@ export class ComplexShape {
   public calculatePerimeter(): number {
     return 2 * (this.width + this.height);
   }
+  
+  public changeColor(color: string): void {
+    this.color = color;
+  }
+  
+  public scale(factor: number): void {
+    this.width *= factor;
+    this.height *= factor;
+  }
+  
+  public getMetadata(): string {
+    return `Created at ${this.creationDate.toISOString()}`;
+  }
+  
+  /** Unused functionality added just in case. */
+  public exportAsXML(): string {
+    return `<shape width="${this.width}" height="${this.height}" color="${this.color}"/>`;
+  }
+  
+  /** Another unused feature. */
+  public clone(): ComplexShape {
+    return new ComplexShape(this.width, this.height, this.color);
+  }
 
   /**
    * Very complex method that changes color, scales, calculates area & perimeter,
@@ -58,28 +81,5 @@ export class ComplexShape {
             - Area: ${area}, Perimeter: ${perimeter}
             - Metadata: ${metadata}
             - XML: ${xml}`;
-  }
-  
-  public changeColor(color: string): void {
-    this.color = color;
-  }
-  
-  public scale(factor: number): void {
-    this.width *= factor;
-    this.height *= factor;
-  }
-  
-  public getMetadata(): string {
-    return `Created at ${this.creationDate.toISOString()}`;
-  }
-  
-  /** Unused functionality added just in case. */
-  public exportAsXML(): string {
-    return `<shape width="${this.width}" height="${this.height}" color="${this.color}"/>`;
-  }
-  
-  /** Another unused feature. */
-  public clone(): ComplexShape {
-    return new ComplexShape(this.width, this.height, this.color);
   }
 }
