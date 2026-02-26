@@ -4,9 +4,8 @@
  * Grado en Ingeniería Informática
  * Programación de Aplicaciones Interactivas 2025-2026
  *
- * @author Erika Crespo Molero
+ * @author Érika Crespo Molero
  * @author César Navarro Santos
- * @author Javier Acosta Portocarrero
  * @author Javier Acosta Portocarrero
  * @since Feb 22 2026
  * @desc Shows how the protected access modifier works.
