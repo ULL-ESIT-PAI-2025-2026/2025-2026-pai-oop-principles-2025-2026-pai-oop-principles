@@ -18,30 +18,17 @@ class Rectangle {
   // Internal state
   private width: number;
   private height: number;
-
-  /**
-   * Creates a new Rectangle.
-   * @param width Rectangle width.
-   * @param height Rectangle height.
-   */
+  
   constructor(width: number, height: number) {
     this.width = width;
     this.height = height;
   }
 
   // External Interface:
-  /**
-   * Returns the rectangle area.
-   * @return The area of the rectangle.
-   */
   public getArea(): number {
     return this.calculateArea();
   }
 
-  /**
-   * Returns the rectangle perimeter.
-   * @return The perimeter of the rectangle.
-   */
   public getPerimeter(): number {
     return this.calculatePerimeter();
   }
