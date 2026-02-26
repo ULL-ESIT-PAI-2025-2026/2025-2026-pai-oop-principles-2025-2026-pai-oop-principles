@@ -8,8 +8,7 @@
  * @author César Navarro Santos
  * @author Javier Acosta Portocarrero
  * @since Feb 22 2026
- * @desc Refactored example following Single Responsibility Principle.
- *       Responsibilities are split into UserService (data access) and UserNotifier (notifications).
+ * @desc Example of a class that is cohesive.
  */
 
 /**
