@@ -25,19 +25,16 @@ class UserManager {
     this.email = email;
   }
 
-  /** Validates user data. */
   public validate(): boolean {
     return this.age > 0 && this.email.includes('@');
   }
 
-  /** Saves user data to a file. */
   public saveToFile(filePath: string): void {
     const data = `${this.name},${this.age},${this.email}`;
     const fyleSystem = require('fs');
     fyleSystem.writeFileSync(filePath, data);
   }
 
-  /** Reads user data from a file. */
   public loadFromFile(filePath: string): void {
     const fyleSystem = require('fs');
     const data = fileSystem.readFileSync(filePath, 'utf-8').split(',');
@@ -46,17 +43,14 @@ class UserManager {
     this.email = data[2];
   }
 
-  /** Formats user data for display. */
   public toString(): string {
     return `Name: ${this.name}, Age: ${this.age}, Email: ${this.email}`;
   }
 
-  /** Updates the user's email. */
   public updateEmail(newEmail: string): void {
     this.email = newEmail;
   }
 
-  /** Logs user information to console. */
   public print(): void {
     console.log(this.toString());
   }
