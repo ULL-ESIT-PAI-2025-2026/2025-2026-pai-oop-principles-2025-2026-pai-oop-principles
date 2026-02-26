@@ -7,7 +7,7 @@
  * @author Erika Crespo Molero
  * @author César Navarro Santos
  * @author Javier Acosta Portocarrero
- * @since Feb 22 2026
+ * @since Feb 26 2026
  * @desc Demonstrates encapsulation and abstraction with a rectangle example.
  */
 
