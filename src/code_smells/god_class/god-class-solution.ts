@@ -58,12 +58,6 @@ class UserValidator {
 class UserLoader {
   private fileSystem = require('fs');
 
-  /** Saves a user to the specified file. */
-  public save(user: User, filePath: string): void {
-    const data = `${user.getName()},${user.getAge()},${user.getEmail()}`;
-    this.fileSystem.writeFileSync(filePath, data);
-  }
-
   /** Loads a user from the specified file. */
   public load(filePath: string): User {
     const data = this.fileSystem.readFileSync(filePath, 'utf-8').split(',');
