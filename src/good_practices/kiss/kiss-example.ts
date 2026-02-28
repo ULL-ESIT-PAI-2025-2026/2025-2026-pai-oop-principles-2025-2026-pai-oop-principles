@@ -11,23 +11,15 @@
  * @desc Example of a KISS-oriented OOP design.
  */
 
-/**
- * Represents a rectangle with only necessary behavior.
- */
+/** Represents a rectangle with only necessary behavior, avoiding unecessary complexity. */
 class Rectangle {
-  private width: number;
-  private height: number;
+  constructor(private width: number, private height: number) {}
   
-  constructor(width: number, height: number) {
-    this.width = width;
-    this.height = height;
-  }
-  
-  public area(): number {
+  calculateArea(): number {
     return this.width * this.height;
   }
 
-  public perimeter(): number {
+  calculatePerimeter(): number {
     return 2 * (this.width + this.height);
   }
 }

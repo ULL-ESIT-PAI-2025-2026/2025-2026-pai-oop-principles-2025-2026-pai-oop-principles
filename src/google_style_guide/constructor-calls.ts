@@ -11,18 +11,14 @@
  * @desc Demonstrates why constructor calls must always use parentheses.
  */
 
-/**
- * Helper class used to illustrate constructor invocation.
- */
+/** Helper class used to illustrate constructor invocation. */
 class Foo {
   constructor() {
     console.log('Foo constructor called');
   }
 
-  /**
-   * Example instance method.
-   */
-  public bar(): void {
+  /** Example instance method. */
+  bar(): void {
     console.log('Foo.bar() called');
   }
 
@@ -37,9 +33,7 @@ class Foo {
   };
 }
 
-/**
- * Entry point of the program.
- */
+/** Entry point of the program. */
 function main(): void {
   console.log('Correct constructor call:');
   const foo1 = new Foo();

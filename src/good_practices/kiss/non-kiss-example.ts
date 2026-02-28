@@ -16,54 +16,49 @@
  * This class violates KISS and SRP.
  */
 export class ComplexShape {
-  private width: number;
-  private height: number;
-  private color: string;
   private creationDate: Date;
 
-  constructor(width: number, height: number, color: string) {
+  constructor(private width: number, private height: number, private color: string) {
     this.width = width;
     this.height = height;
     this.color = color;
     this.creationDate = new Date();
   }
   
-  public calculateArea(): number {
+  calculateArea(): number {
     return this.width * this.height;
   }
   
-  public calculatePerimeter(): number {
+  calculatePerimeter(): number {
     return 2 * (this.width + this.height);
   }
   
-  public changeColor(color: string): void {
+  changeColor(color: string): void {
     this.color = color;
   }
   
-  public scale(factor: number): void {
+  scale(factor: number): void {
     this.width *= factor;
     this.height *= factor;
   }
   
-  public getMetadata(): string {
+  getMetadata(): string {
     return `Created at ${this.creationDate.toISOString()}`;
   }
   
-  /** Unused functionality added just in case. */
-  public exportAsXML(): string {
+  exportAsXML(): string {
     return `<shape width="${this.width}" height="${this.height}" color="${this.color}"/>`;
   }
   
-  /** Another unused feature. */
-  public clone(): ComplexShape {
+  clone(): ComplexShape {
     return new ComplexShape(this.width, this.height, this.color);
   }
-
+  
   /**
    * Very complex method that changes color, scales, calculates area & perimeter,
    * returns metadata + XML export, all in one.
    */
-  public complexOperation(newColor: string, scaleFactor: number): string {
+  complexOperation(newColor: string, scaleFactor: number): string {
     // Change color
     this.color = newColor;
     // Scale dimensions

@@ -11,33 +11,29 @@
  * @desc Demonstrates encapsulation and abstraction with a rectangle example.
  */
 
-/**
- * Represents a rectangle.
- */
+/** Represents a rectangle. */
 class Rectangle {
-  // Internal state
-  private width: number;
-  private height: number;
-  
-  constructor(width: number, height: number) {
+  // Internal state (width and height) is encapsulated and not directly accessible from outside.
+  constructor(private width: number, private height: number) {
     this.width = width;
     this.height = height;
   }
 
   // External Interface:
-  public getArea(): number {
+  getArea(): number {
     return this.calculateArea();
   }
 
-  public getPerimeter(): number {
+  getPerimeter(): number {
     return this.calculatePerimeter();
   }
 
   // Internal Interface:
-  private calculateArea(): number {
+  calculateArea(): number {
     return this.width * this.height;
   }
-  private calculatePerimeter(): number {
+
+  calculatePerimeter(): number {
     return 2 * (this.width + this.height);
   }
 }

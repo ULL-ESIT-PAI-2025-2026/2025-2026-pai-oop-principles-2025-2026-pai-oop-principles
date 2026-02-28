@@ -14,7 +14,7 @@
  * Bad expample. Maximum visibility
  */
 class BadCoffeeMachine {
-  waterTemperature = 20; 
+  waterTemperature: number = 20; 
 
   heatWater(): void {
     this.waterTemperature = 90;

@@ -33,15 +33,14 @@ class UnnecessaryConstructorOverride extends Base {
 
 // Bellows examples illustrate cases where an empty constructor is necessary and must be kept:
 
-/**
- * Default constructor is implicitly provided by ES2015.
- * This is equivalent to an empty constructor.
+/** 
+ * Default constructor is implicitly provided by ES2015. 
+ * This is equivalent to an empty constructor. 
  */
 class DefaultConstructor {
 }
 
 /**
- * Constructor must be kept.
  * Parameter property defines and initializes a class attribute,
  * defining its visibility.
  */
@@ -49,18 +48,12 @@ class ParameterProperties {
   constructor(private myService) {}
 }
 
-/**
- * Constructor must be kept.
- * Parameter decorator introduces side effects at construction time.
- */
+/** Parameter decorator introduces side effects at construction time. */
 class ParameterDecorators {
   constructor(@SideEffectDecorator myService) {}
 }
 
-/**
- * Constructor must be kept.
- * Private constructor prevents external instantiation.
- */
+/** Private constructor prevents external instantiation. */
 class NoInstantiation {
   private constructor() {}
 }

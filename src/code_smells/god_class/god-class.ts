@@ -11,31 +11,21 @@
  * @desc Example of a God Class code smell.
  */
 
-/**
- * God class that handles data, validation, persistence and presentation.
- */
+/** God class that handles data, validation, persistence and presentation. */
 class UserManager {
-  private name: string;
-  private age: number;
-  private email: string;
+  constructor(private name: string, private age: number, private email: string) {}
 
-  constructor(name: string, age: number, email: string) {
-    this.name = name;
-    this.age = age;
-    this.email = email;
-  }
-
-  public validate(): boolean {
+  validate(): boolean {
     return this.age > 0 && this.email.includes('@');
   }
 
-  public saveToFile(filePath: string): void {
+  saveToFile(filePath: string): void {
     const data = `${this.name},${this.age},${this.email}`;
     const fyleSystem = require('fs');
     fyleSystem.writeFileSync(filePath, data);
   }
 
-  public loadFromFile(filePath: string): void {
+  loadFromFile(filePath: string): void {
     const fyleSystem = require('fs');
     const data = fileSystem.readFileSync(filePath, 'utf-8').split(',');
     this.name = data[0];
@@ -43,15 +33,15 @@ class UserManager {
     this.email = data[2];
   }
 
-  public toString(): string {
+  toString(): string {
     return `Name: ${this.name}, Age: ${this.age}, Email: ${this.email}`;
   }
 
-  public updateEmail(newEmail: string): void {
+  updateEmail(newEmail: string): void {
     this.email = newEmail;
   }
 
-  public print(): void {
+  print(): void {
     console.log(this.toString());
   }
 }

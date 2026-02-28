@@ -14,7 +14,7 @@
  * Good example of minimum visibility
  */
 class GoodCoffeeMachine {
-  private waterTemperature = 20;
+  private waterTemperature: number = 20;
 
   makeCoffee(): void {
     console.log('Starting coffee proces');
