@@ -12,11 +12,7 @@
  */
 
 class Address {
-  private readonly street: string;
-  private readonly city: string;
-  private readonly zipCode: string;
-
-  constructor(street: string, city: string, zipCode: string) {
+  constructor(private readonly street: string, private readonly city: string, private readonly zipCode: string) {
     if (!street || !city || !zipCode) {
       throw new Error('All address fields are required');
     }
@@ -42,8 +38,7 @@ class Address {
   }
 
   getCoordinates(): { lat: number; lng: number } {
-    // In a real app, this could call a geocoding service.
-    return { lat: 37.7749, lng: -122.4194 }; // Example coordinates
+    return { lat: 37.7749, lng: -122.4194 }; 
   }
 }
 
@@ -57,7 +52,6 @@ function createOrder(customerId: number, products: string[], address: Address): 
 
 function calculateShippingCost(address: Address, weight: number): number {
   console.log(`Cost for: ${address.getDisplayAddress()}`);
-  // Use address coordinates for more precise calculation (example)
   const coords = address.getCoordinates();
   console.log(`  (Using coordinates: ${coords.lat}, ${coords.lng})`);
   return weight * 0.5;

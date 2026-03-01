@@ -41,13 +41,11 @@ class Patient {
  * Represents a doctor who can diagnose patients.
  */
 class Doctor {
-  private lastName: string;
-
   /**
    * Creates a Doctor instance.
    * @param lastName - Doctor's last name (used as "Dr. LastName").
    */
-  constructor(lastName: string) {
+  constructor(private lastName: string) {
     this.lastName = lastName;
   }
 
