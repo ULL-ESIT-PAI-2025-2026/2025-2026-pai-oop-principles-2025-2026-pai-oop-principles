@@ -30,14 +30,7 @@ class Engine {
  * when the car is destroyed (composition relationship).
  */
 class Car {
-  private engine: Engine;
-
-  /**
-   * Creates a Car instance and instantiates its engine.
-   */
-  constructor() {
-    this.engine = new Engine();
-  }
+  private engine: Engine = new Engine();
 
   /**
    * Starts the car by starting its engine.

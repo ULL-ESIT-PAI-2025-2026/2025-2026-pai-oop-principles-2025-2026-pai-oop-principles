@@ -18,11 +18,7 @@ class Engine {
 }
 
 class Car {
-  private engine: Engine;
-
-  constructor() {
-    this.engine = new Engine();
-  }
+  private engine: Engine = new Engine();
 
   startCar(): string {
     return this.engine.start();
