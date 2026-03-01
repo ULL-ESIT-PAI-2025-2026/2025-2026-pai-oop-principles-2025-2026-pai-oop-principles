@@ -18,7 +18,7 @@
 class Animal {
   constructor(protected name: string) {}
   
-  public makeSound(): void {
+  makeSound(): void {
     console.log(`${this.name} is making a generic sound...`);
   }
 }
@@ -27,7 +27,7 @@ class Animal {
  * Derived class that COMPLETELY REPLACES the behavior.
  */
 class Dog extends Animal {
-  public override makeSound(): void {
+  override makeSound(): void {
     console.log(`${this.name} barks: Woof! Woof!`);
   }
 }
@@ -36,7 +36,7 @@ class Dog extends Animal {
  * Derived class that EXTENDS the parent's behavior.
  */
 class Lion extends Animal {
-  public override makeSound(): void {
+  override makeSound(): void {
     super.makeSound(); 
     console.log('...and roars loudly: ROAR!');
   }

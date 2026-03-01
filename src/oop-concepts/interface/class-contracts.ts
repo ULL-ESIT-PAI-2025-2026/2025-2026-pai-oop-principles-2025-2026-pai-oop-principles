@@ -31,11 +31,11 @@ interface Scannable {
  * It combines both printing and scanning capabilities into a single device.
  */
 class MultiFunctionDevice implements Printable, Scannable {
-  public print(): void {
+  print(): void {
     console.log('Printing high-quality document...');
   }
 
-  public scan(): void {
+  scan(): void {
     console.log('Scanning document to PDF...');
   }
 }

@@ -17,11 +17,11 @@
 abstract class Employee {
   constructor(protected name: string, protected id: string) {}
 
-  public displayInfo(): void {
+  displayInfo(): void {
     console.log(`[ID: ${this.id}] Name: ${this.name}`);
   }
 
-  public abstract calculateSalary(): number;
+  abstract calculateSalary(): number;
 }
 
 /**
@@ -32,7 +32,7 @@ class FullTimeEmployee extends Employee {
     super(name, id);
   }
 
-  public override calculateSalary(): number {
+  override calculateSalary(): number {
     return this.monthlySalary;
   }
 }
@@ -45,7 +45,7 @@ class HourlyEmployee extends Employee {
     super(name, id);
   }
 
-  public override calculateSalary(): number {
+  override calculateSalary(): number {
     return this.hourlyRate * this.hoursWorked;
   }
 }

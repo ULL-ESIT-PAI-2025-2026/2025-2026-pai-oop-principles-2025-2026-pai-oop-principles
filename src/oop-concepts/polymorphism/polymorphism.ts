@@ -19,9 +19,9 @@
 abstract class Shape {
   constructor(protected name: string) {}
   
-  public abstract calculateArea(): number;
+  abstract calculateArea(): number;
 
-  public getName(): string {
+  getName(): string {
     return this.name;
   }
 }
@@ -34,7 +34,7 @@ class Circle extends Shape {
     super('Circle');
   }
 
-  public override calculateArea(): number {
+  override calculateArea(): number {
     return Math.PI * this.radius * this.radius;
   }
 }
@@ -47,7 +47,7 @@ class Rectangle extends Shape {
     super('Rectangle');
   }
 
-  public override calculateArea(): number {
+  override calculateArea(): number {
     return this.width * this.height;
   }
 }

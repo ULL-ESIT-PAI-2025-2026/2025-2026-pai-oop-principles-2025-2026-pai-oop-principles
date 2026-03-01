@@ -30,7 +30,7 @@ interface Swimmable {
  * A Duck is an animal that can both fly and swim.
  */
 class Duck implements Flyable, Swimmable {
-  public fly(): void {
+  fly(): void {
     console.log('The duck flaps its wings and flies over the lake.');
   }
 
@@ -43,7 +43,7 @@ class Duck implements Flyable, Swimmable {
  * A Penguin is a bird, but it can only swim, not fly.
  */
 class Penguin implements Swimmable {
-  public swim(): void {
+  swim(): void {
     console.log('The penguin dives and swims extremely fast');
   }
 }
@@ -52,7 +52,7 @@ class Penguin implements Swimmable {
  * An Airplane is completely unrelated to animals, but it can fly.
  */
 class Airplane implements Flyable {
-  public fly(): void {
+  fly(): void {
     console.log('The airplane takes off using its jet engines.');
   }
 }

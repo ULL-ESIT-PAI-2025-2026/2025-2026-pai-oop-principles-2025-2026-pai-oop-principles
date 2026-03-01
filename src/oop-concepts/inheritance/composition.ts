@@ -24,7 +24,7 @@ interface SoundBehavior {
  * Implements the sound behavior specifically for animals that bark, such as dogs.
  */
 class BarkBehavior implements SoundBehavior {
-  public makeSound(): void {
+  makeSound(): void {
     console.log('barks: Woof! Woof!');
   }
 }
@@ -33,7 +33,7 @@ class BarkBehavior implements SoundBehavior {
  * Implements the sound behavior specifically for animals that roar, such as lions.
  */
 class RoarBehavior implements SoundBehavior {
-  public makeSound(): void {
+  makeSound(): void {
     console.log('roars loudly: ROAR!');
   }
 }
@@ -47,7 +47,7 @@ class RoarBehavior implements SoundBehavior {
 class Animal {
   constructor(private name: string, private soundBehavior: SoundBehavior) {}
   
-  public performSound(): void {
+  performSound(): void {
     console.log(`[${this.name}]`); 
     this.soundBehavior.makeSound();
   }
