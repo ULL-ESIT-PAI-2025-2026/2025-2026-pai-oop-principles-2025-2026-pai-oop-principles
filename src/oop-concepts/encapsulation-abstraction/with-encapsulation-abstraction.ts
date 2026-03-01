@@ -29,11 +29,11 @@ class Rectangle {
   }
 
   // Internal Interface:
-  calculateArea(): number {
+  private calculateArea(): number {
     return this.width * this.height;
   }
 
-  calculatePerimeter(): number {
+  private calculatePerimeter(): number {
     return 2 * (this.width + this.height);
   }
 }
