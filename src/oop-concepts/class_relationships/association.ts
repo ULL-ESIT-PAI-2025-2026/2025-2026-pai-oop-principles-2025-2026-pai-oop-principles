@@ -15,15 +15,12 @@
  * Represents a patient with first and last name.
  */
 class Patient {
-  private firstName: string;
-  private lastName: string;
-
   /**
    * Creates a Patient instance.
    * @param firstName - Patient's first name.
    * @param lastName - Patient's last name.
    */
-  constructor(firstName: string, lastName: string) {
+  constructor(private firstName: string, private lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
